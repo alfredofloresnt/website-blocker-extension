@@ -1,0 +1,33 @@
+{
+    "name": "Website blocker",
+    "version": "1.0",
+    "manifest_version": 3,
+    "description": "Redirects a list of websites to a custom page between specified times",
+    
+    "permissions": [
+      "declarativeNetRequest",
+      "storage",
+      "alarms"
+    ],
+    
+    "host_permissions": [
+      "*://*/*"
+    ],
+    
+    "background": {
+      "service_worker": "background.js"
+    },
+  
+    "options_ui": {
+      "page": "settings.html",
+      "open_in_tab": true
+    },
+
+    "web_accessible_resources": [
+      {
+        "resources": ["block.html"],
+        "matches": ["<all_urls>"]
+      }
+    ]
+  }
+  
